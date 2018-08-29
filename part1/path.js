@@ -31,5 +31,4 @@ console.log(path.isAbsolute('./home'));
 console.log('------------------');
 
 console.log(path.relative('C:\\users\\ds\\ws\\node\\path.js','C:\\'));
-console.log(path.seq);
-console.log(path.seq);
+
