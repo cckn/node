@@ -4,10 +4,10 @@ const config = require('../config/config')[env];
 const db = {};
 
 const sequelize = new Sequelize(
-    config.database,
-    config.username,
-    config.password,
-    config
+  config.database,
+  config.username,
+  config.password,
+  config
 );
 
 db.sequelize = sequelize;
@@ -22,15 +22,15 @@ db.Post.belongsToMany(db.Hashtag, { through: 'PostHashtag' });
 db.Hashtag.belongsToMany(db.Post, { through: 'PostHashtag' });
 
 db.User.belongsToMany(db.User, {
-    foreignKey: 'followingId',
-    as: 'Followers',
-    through: 'Follow',
+  foreignKey: 'followingId',
+  as: 'Followers',
+  through: 'Follow',
 });
 
 db.User.belongsToMany(db.User, {
-    foreignKey: 'followerId',
-    as: 'Followings',
-    through: 'Follow',
+  foreignKey: 'followerId',
+  as: 'Followings',
+  through: 'Follow',
 });
 
 module.exports = db;
